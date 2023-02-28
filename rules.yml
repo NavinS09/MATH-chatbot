@@ -1,0 +1,43 @@
+version: "2.0"
+
+rules:
+- rule: Activate math bot
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_instructions
+
+- rule: Ask for operation
+  steps:
+  - intent: ask_operation
+  - action: utter_ask_number1
+
+- rule: Ask for first number
+  steps:
+  - intent: provide_operation
+  - action: action_set_operation
+  - action: utter_ask_number1
+
+- rule: Ask for second number
+  condition:
+  - slot_was_set:
+    - operation: add
+    - operation: subtract
+    - operation: multiply
+    - operation: divide
+    - operation: power
+  steps:
+  - action: utter_ask_number2
+
+- rule: Perform operation and give result
+  condition:
+  - slot_was_set:
+    - operation: add
+    - operation: subtract
+    - operation: multiply
+    - operation: divide
+    - operation: power
+    - operation: square_root
+  steps:
+  - action: action_perform_operation
+  - action: utter_show_result

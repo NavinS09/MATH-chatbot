@@ -1,0 +1,43 @@
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- perform_operation
+
+entities:
+- number
+
+slots:
+  number1:
+    type: unfeaturized
+  number2:
+    type: unfeaturized
+  operation:
+    type: unfeaturized
+
+responses:
+  utter_greet:
+  - text: "Hello! I am a math bot. How can I help you today?"
+
+  utter_goodbye:
+  - text: "Goodbye! Have a great day."
+
+  utter_default:
+  - text: "I'm sorry, I didn't quite understand. Could you repeat that?"
+
+actions:
+- action_perform_operation
+
+templates:
+  utter_ask_number1:
+  - text: "What is the first number?"
+
+  utter_ask_number2:
+  - text: "What is the second number?"
+
+  utter_ask_operation:
+  - text: "What operation would you like to perform? You can choose from add, subtract, multiply, divide, power, and square root."
+
+  utter_result:
+  - text: "The result is {result}."

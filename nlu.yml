@@ -1,0 +1,79 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hi
+    - hello
+    - hey
+    - hi there
+    - hello there
+    - hey there
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you
+    - see you later
+    - catch you later
+    - bye bye
+
+- intent: perform_operation
+  examples: |
+    - What is the sum of [5](number1) and [3](number2)?
+    - Calculate [2.5](number1) minus [1.3](number2)
+    - Multiply [10](number1) and [3.2](number2)
+    - Divide [20](number1) by [4](number2)
+    - Raise [2](number1) to the power of [5](number2)
+    - Calculate the square root of [16](number1)
+    - What is [4](number1) plus [8](number2)?
+
+- intent: affirm
+  examples: |
+    - Yes
+    - Sure
+    - That's right
+    - Absolutely
+
+- intent: deny
+  examples: |
+    - No
+    - Nope
+    - Not really
+    - That's not right
+
+- intent: thanks
+  examples: |
+    - Thanks
+    - Thank you
+    - Thanks a lot
+    - Thank you so much
+
+- intent: fallback
+  examples: |
+    - Sorry, I didn't get that
+    - I didn't understand you
+    - Can you rephrase that?
+    - What do you mean?
+
+- intent: stop
+  examples: |
+    - Stop
+    - Cancel
+    - Quit
+    - Exit
+
+entity_synonyms:
+- synonym: number1
+  examples: |
+    - number1
+    - num1
+    - first number
+    - first num
+- synonym: number2
+  examples: |
+    - number2
+    - num2
+    - second number
+    - second num

@@ -1,0 +1,49 @@
+version: "2.0"
+
+# greet and exit
+
+## greet
+* greet
+  - utter_greet
+
+## goodbye
+* goodbye
+  - utter_goodbye
+
+## thank you
+* thank you
+  - utter_thank_you
+
+
+# math operations
+
+## addition
+* math_operation{"operation": "add", "number1": "10", "number2": "20"}
+  - action_perform_operation
+
+## subtraction
+* math_operation{"operation": "subtract", "number1": "30", "number2": "15"}
+  - action_perform_operation
+
+## multiplication
+* math_operation{"operation": "multiply", "number1": "5", "number2": "6"}
+  - action_perform_operation
+
+## division
+* math_operation{"operation": "divide", "number1": "24", "number2": "8"}
+  - action_perform_operation
+
+## power
+* math_operation{"operation": "power", "number1": "2", "number2": "3"}
+  - action_perform_operation
+
+## square root
+* math_operation{"operation": "square_root", "number1": "16"}
+  - action_perform_operation
+
+
+# fallback
+
+## fallback
+* fallback
+  - utter_default
